@@ -299,7 +299,11 @@ func TestTestReportFunctionAgreesWithTestFunction(t *testing.T) {
 			if funcErr != nil {
 				t.Fatalf("Run: %s", funcErr)
 			}
-			passed := value.(types.Bool).ValueBool()
+			result, ok := value.(types.Bool)
+			if !ok {
+				t.Fatalf("result is %T, want types.Bool", value)
+			}
+			passed := result.ValueBool()
 
 			if report.Passed != passed {
 				t.Errorf("test_report.passed = %t but test = %t", report.Passed, passed)
