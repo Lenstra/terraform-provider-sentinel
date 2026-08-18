@@ -187,9 +187,10 @@ output "passed" {
   value = provider::sentinel::test(%q)
 }
 `, hclPath(t, dir)),
-			// Terraform wraps a diagnostic across lines, so the pattern only
-			// matches the tail of the sentence.
-			ExpectError: regexp.MustCompile(`contain a sentinel\.hcl file`),
+			// Terraform hard wraps a diagnostic, and where the break lands
+			// depends on how long the temporary directory path is, so every
+			// space in the pattern has to accept a newline and its indent.
+			ExpectError: regexp.MustCompile(`does\s+not\s+contain\s+a\s+sentinel\.hcl\s+file`),
 		}},
 	})
 }
