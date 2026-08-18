@@ -1,0 +1,22 @@
+# Compiled provider
+terraform-provider-sentinel
+bin/
+dist/
+
+# Terraform working files
+.terraform/
+.terraform.lock.hcl
+*.tfstate
+*.tfstate.*
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+.terraformrc
+terraform.rc
+
+# Editors and OS
+.DS_Store
+.idea/
+*.iml
+*.swp

@@ -1,0 +1,7 @@
+// Reached through a bare `module` block rather than `import "module"`.
+
+managed = func(changes) {
+	return filter changes as _, rc {
+		rc.mode is "managed"
+	}
+}

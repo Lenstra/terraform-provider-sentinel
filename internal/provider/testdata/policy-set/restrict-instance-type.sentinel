@@ -1,0 +1,10 @@
+import "tfplan/v2" as tfplan
+
+param allowed default ["t3.micro"]
+
+main = rule {
+	all tfplan.resource_changes as _, rc {
+		rc.type is not "aws_instance" or
+			rc.change.after.instance_type in allowed
+	}
+}

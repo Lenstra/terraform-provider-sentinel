@@ -1,0 +1,19 @@
+// Only a short list of EC2 instance types may be created or updated.
+
+import "tfplan/v2" as tfplan
+
+param allowed_types default ["t3.micro"]
+
+instances = filter tfplan.resource_changes as _, rc {
+	rc.type is "aws_instance" and
+		rc.mode is "managed" and
+		(rc.change.actions contains "create" or rc.change.actions contains "update")
+}
+
+violations = filter instances as _, instance {
+	instance.change.after.instance_type not in allowed_types
+}
+
+main = rule {
+	length(violations) is 0
+}

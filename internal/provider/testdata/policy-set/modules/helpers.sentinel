@@ -1,0 +1,5 @@
+managed = func(changes) {
+	return filter changes as _, rc {
+		rc.mode is "managed"
+	}
+}

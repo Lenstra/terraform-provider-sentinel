@@ -1,0 +1,7 @@
+// Reached through a bare `module` block rather than `import "module"`.
+
+tagged = func(changes, tag) {
+	return filter changes as _, rc {
+		rc.change.after.tags else {} contains tag
+	}
+}
