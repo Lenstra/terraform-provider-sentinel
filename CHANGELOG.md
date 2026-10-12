@@ -1,3 +1,12 @@
+## Unreleased
+
+BREAKING CHANGES:
+
+- The provider moves from `kevineor/sentinel` to `lenstra/sentinel` on the
+  Terraform Registry. Update the `source` in `required_providers` and run
+  `terraform state replace-provider registry.terraform.io/kevineor/sentinel
+  registry.terraform.io/lenstra/sentinel` (see the README).
+
 ## 0.0.1
 
 FEATURES:

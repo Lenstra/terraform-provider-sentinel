@@ -8,7 +8,7 @@ import (
 	"testing"
 
 	"github.com/google/go-cmp/cmp"
-	"github.com/kevineor/terraform-provider-sentinel/internal/sentineltest"
+	"github.com/lenstra/terraform-provider-sentinel/internal/sentineltest"
 )
 
 func TestRunnerTestPassing(t *testing.T) {
