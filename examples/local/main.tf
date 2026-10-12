@@ -12,7 +12,7 @@ terraform {
 
   required_providers {
     sentinel = {
-      source = "kevineor/sentinel"
+      source = "lenstra/sentinel"
     }
   }
 }

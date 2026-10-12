@@ -28,7 +28,7 @@ terraform {
   required_version = ">= 1.8.0"
 
   required_providers {
-    sentinel = { source = "kevineor/sentinel" }
+    sentinel = { source = "lenstra/sentinel" }
     tfe      = { source = "hashicorp/tfe" }
   }
 }
@@ -96,6 +96,32 @@ be the CLI location, but provider defined functions cannot read the provider
 configuration, so `SENTINEL_BINARY` covers it. A provider argument would have
 silently applied to the data source alone.
 
+## Migrating from `kevineor/sentinel`
+
+The provider was first published as `kevineor/sentinel` and now lives at
+`lenstra/sentinel`. Terraform treats them as two unrelated providers, so an
+existing configuration has to switch its `source`:
+
+```hcl
+required_providers {
+  sentinel = { source = "lenstra/sentinel" }
+}
+```
+
+Then rewrite the provider recorded in the state before running `init`:
+
+```shell
+terraform state replace-provider \
+  registry.terraform.io/kevineor/sentinel \
+  registry.terraform.io/lenstra/sentinel
+terraform init
+```
+
+The plan that follows shows no changes. The provider only has a data source, so
+skipping `replace-provider` also works as long as `kevineor/sentinel` can still
+be downloaded: `init` installs both, and the next `apply` moves the data source
+over. Without it, `init` fails once the old provider is no longer reachable.
+
 ## Layout
 
 ```
@@ -131,7 +157,7 @@ make install
 # ~/.terraformrc
 provider_installation {
   dev_overrides {
-    "kevineor/sentinel" = "/path/to/your/GOBIN"
+    "lenstra/sentinel" = "/path/to/your/GOBIN"
   }
   direct {}
 }

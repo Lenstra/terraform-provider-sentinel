@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/hashicorp/terraform-plugin-framework/function"
-	"github.com/kevineor/terraform-provider-sentinel/internal/sentinel"
+	"github.com/lenstra/terraform-provider-sentinel/internal/sentinel"
 )
 
 var _ function.Function = &TestFunction{}

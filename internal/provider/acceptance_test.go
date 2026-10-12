@@ -10,8 +10,8 @@ import (
 	"github.com/hashicorp/terraform-plugin-go/tfprotov6"
 	"github.com/hashicorp/terraform-plugin-testing/helper/resource"
 	"github.com/hashicorp/terraform-plugin-testing/tfversion"
-	"github.com/kevineor/terraform-provider-sentinel/internal/sentinel"
-	"github.com/kevineor/terraform-provider-sentinel/internal/sentineltest"
+	"github.com/lenstra/terraform-provider-sentinel/internal/sentinel"
+	"github.com/lenstra/terraform-provider-sentinel/internal/sentineltest"
 )
 
 // These tests run the real Terraform CLI, so they only run when TF_ACC is set.

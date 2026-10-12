@@ -11,7 +11,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-framework/datasource/schema"
 	fwpath "github.com/hashicorp/terraform-plugin-framework/path"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	"github.com/kevineor/terraform-provider-sentinel/internal/sentinel"
+	"github.com/lenstra/terraform-provider-sentinel/internal/sentinel"
 )
 
 var _ datasource.DataSource = &PolicySetDataSource{}
