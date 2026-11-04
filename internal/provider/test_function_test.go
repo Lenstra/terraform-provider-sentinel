@@ -6,11 +6,11 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/Lenstra/terraform-provider-sentinel/internal/sentinel"
+	"github.com/Lenstra/terraform-provider-sentinel/internal/sentineltest"
 	"github.com/hashicorp/terraform-plugin-framework/attr"
 	"github.com/hashicorp/terraform-plugin-framework/function"
 	"github.com/hashicorp/terraform-plugin-framework/types"
-	"github.com/kevineor/terraform-provider-sentinel/internal/sentinel"
-	"github.com/kevineor/terraform-provider-sentinel/internal/sentineltest"
 )
 
 // runFunction calls a function the way the framework does. result must be an

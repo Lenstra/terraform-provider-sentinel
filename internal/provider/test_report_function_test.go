@@ -5,12 +5,12 @@ import (
 	"strings"
 	"testing"
 
+	"github.com/Lenstra/terraform-provider-sentinel/internal/sentinel"
+	"github.com/Lenstra/terraform-provider-sentinel/internal/sentineltest"
 	"github.com/google/go-cmp/cmp"
 	"github.com/hashicorp/terraform-plugin-framework/function"
 	"github.com/hashicorp/terraform-plugin-framework/types"
 	"github.com/hashicorp/terraform-plugin-framework/types/basetypes"
-	"github.com/kevineor/terraform-provider-sentinel/internal/sentinel"
-	"github.com/kevineor/terraform-provider-sentinel/internal/sentineltest"
 )
 
 // reportTestModel mirrors the object the function returns, so assertions can be

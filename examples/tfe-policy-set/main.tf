@@ -6,7 +6,7 @@ terraform {
 
   required_providers {
     sentinel = {
-      source = "kevineor/sentinel"
+      source = "Lenstra/sentinel"
     }
     tfe = {
       source = "hashicorp/tfe"

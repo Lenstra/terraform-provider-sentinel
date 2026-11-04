@@ -5,8 +5,8 @@ import (
 	"flag"
 	"log"
 
+	"github.com/Lenstra/terraform-provider-sentinel/internal/provider"
 	"github.com/hashicorp/terraform-plugin-framework/providerserver"
-	"github.com/kevineor/terraform-provider-sentinel/internal/provider"
 )
 
 // version is set by the release build.
@@ -19,7 +19,7 @@ func main() {
 	flag.Parse()
 
 	opts := providerserver.ServeOpts{
-		Address: "registry.terraform.io/kevineor/sentinel",
+		Address: "registry.terraform.io/Lenstra/sentinel",
 		Debug:   debug,
 	}
 

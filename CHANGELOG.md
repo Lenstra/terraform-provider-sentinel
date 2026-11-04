@@ -1,3 +1,10 @@
+## 0.0.2
+
+NOTES:
+
+- The provider moves to the Lenstra namespace: use `source = "Lenstra/sentinel"`
+  instead of `kevineor/sentinel`. No other change.
+
 ## 0.0.1
 
 FEATURES:

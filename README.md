@@ -28,7 +28,7 @@ terraform {
   required_version = ">= 1.8.0"
 
   required_providers {
-    sentinel = { source = "kevineor/sentinel" }
+    sentinel = { source = "Lenstra/sentinel" }
     tfe      = { source = "hashicorp/tfe" }
   }
 }
@@ -131,7 +131,7 @@ make install
 # ~/.terraformrc
 provider_installation {
   dev_overrides {
-    "kevineor/sentinel" = "/path/to/your/GOBIN"
+    "Lenstra/sentinel" = "/path/to/your/GOBIN"
   }
   direct {}
 }

@@ -1,4 +1,4 @@
-module github.com/kevineor/terraform-provider-sentinel
+module github.com/Lenstra/terraform-provider-sentinel
 
 go 1.25.8
 
